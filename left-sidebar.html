@@ -52,8 +52,40 @@
 							<p>Customize your photo settings with just a few clicks.</p>
 						</header>
 					</div>
+						<div class="slidecontainer">
+							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+							<p>Exposure: <span id="exposure"></span></p>
+						</div>
+
+						<div class="slidecontainer">
+							<input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+							<p>Camera Speed: <span id="exposure"></span></p>
+						</div>
+
+						<div class="slidecontainer">
+							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+							<p>Brightness</p>
+						</div>
+
+						<div class="slidecontainer">
+							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+							<p>Contrast</p>
+						</div>
+
+						<div class="slidecontainer">
+							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+							<p>Saturation</p>
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="reset" value="Reset" /></li>
+										<li><input type="submit" value="Save" class="primary" /></li>
+								</ul>
+						</div>
+					</div>
 				</div>
 
+
+	
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
@@ -76,6 +108,14 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				const slider = document.getElementById("myRange");
+				const output = document.getElementById("exposure");
+				output.textContent = slider.value;
 
+				slider.oninput = function() {
+				output.textContent = this.value;
+				};
+				</script>
 	</body>
 </html>

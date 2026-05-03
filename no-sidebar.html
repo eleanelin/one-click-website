@@ -49,9 +49,23 @@
 					<div class="container">
 						<header class="major">
 							<h2>Settings</h2>
-							<p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
+							<p>Adjust One Click to your preferences.</p>
 						</header>
 					</div>
+									<ul class="actions">
+										<li><input type="submit" value="Bluetooth Connect" class="primary" /></li>
+								</ul>
+						<div class="slidecontainer">
+							<input type="range" min="1" max="3" value="2" class="slider" id="myRange">
+							<p>Rotation Speed: <span id="rotation"></span></p>
+						<div class="col-12">
+									<ul class="actions">
+										<li><input type="reset" value="Reset" /></li>
+										<li><input type="submit" value="Save" class="primary" /></li>
+								</ul>
+							</div>
+						</div>
+					
 				</div>
 
 			<!-- Footer -->
@@ -76,6 +90,15 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				const slider = document.getElementById("myRange");
+				const output = document.getElementById("rotation");
+				output.textContent = slider.value;
+
+				slider.oninput = function() {
+				output.textContent = this.value;
+				};
+				</script>
 
 	</body>
 </html>
