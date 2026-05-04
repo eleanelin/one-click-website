@@ -47,25 +47,101 @@
 			<!-- Main -->
 				<div id="main" class="wrapper style1">
 					<div class="container">
+
 						<header class="major">
 							<h2>Settings</h2>
 							<p>Adjust One Click to your preferences.</p>
 						</header>
-					</div>
-									<ul class="actions">
-										<li><input type="submit" value="Bluetooth Connect" class="primary" /></li>
-								</ul>
-						<div class="slidecontainer">
-							<input type="range" min="1" max="3" value="2" class="slider" id="myRange">
-							<p>Rotation Speed: <span id="rotation"></span></p>
-						<div class="col-12">
-									<ul class="actions">
-										<li><input type="reset" value="Reset" /></li>
-										<li><input type="submit" value="Save" class="primary" /></li>
-								</ul>
+
+						<!-- Bluetooth Connection -->
+						<section>
+							<h3>Device Connection</h3>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<label for="bluetoothToggle"><strong>Bluetooth Connection</strong></label>
+									<input type="checkbox" id="bluetoothToggle" name="bluetoothToggle">
+									<label for="bluetoothToggle">Connect to rotating stand</label>
+								</div>
+								<div class="col-6 col-12-medium">
+									<p>Status: <span id="btStatus">Disconnected</span></p>
+								</div>
 							</div>
-						</div>
-					
+						</section>
+
+						<hr />
+
+						<!-- Rotation Speed -->
+						<section>
+							<h3>Rotation Speed</h3>
+							<div class="slidecontainer">
+								<input type="range" min="1" max="5" value="3" class="slider" id="speedRange">
+								<p>
+									Speed: <strong><span id="speedValue"></span></strong>
+									(1 = Slow, 5 = Fast)
+								</p>
+							</div>
+						</section>
+
+						<hr />
+
+						<!-- Listing Details Generator -->
+						<section>
+							<h3>Auto-Generated Listing Details</h3>
+							<p>Select what details you want the app to generate for each item:</p>
+
+							<div class="row">
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="brand" checked>
+									<label for="brand">Brand</label>
+								</div>
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="size" checked>
+									<label for="size">Size</label>
+								</div>
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="condition" checked>
+									<label for="condition">Condition</label>
+								</div>
+
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="era" checked>
+									<label for="era">Era (e.g. 90s, Y2K)</label>
+								</div>
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="material">
+									<label for="material">Material</label>
+								</div>
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="measurements">
+									<label for="measurements">Measurements</label>
+								</div>
+
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="color">
+									<label for="color">Color</label>
+								</div>
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="style">
+									<label for="style">Style Tags</label>
+								</div>
+								<div class="col-4 col-12-medium">
+									<input type="checkbox" id="seo" checked>
+									<label for="seo">SEO Description</label>
+								</div>
+							</div>
+						</section>
+
+						<hr />
+
+						<!-- Actions -->
+						<section>
+							<ul class="actions">
+								<li><input type="reset" value="Reset" /></li>
+								<li><input type="submit" value="Save Settings" class="primary" /></li>
+							</ul>
+						</section>
+
+					</div>
 				</div>
 
 			<!-- Footer -->

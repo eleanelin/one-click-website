@@ -53,32 +53,32 @@
 						</header>
 					</div>
 						<div class="slidecontainer">
-							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-							<p>Exposure: <span id="exposure"></span></p>
+							<input type="range" min="1" max="10" value="5" class="slider" id="speedRange">
+							<p>Photos Per Item: <span id="speedValue">5</span></p>
 						</div>
 
 						<div class="slidecontainer">
-							<input type="range" min="1" max="10" value="5" class="slider" id="myRange">
-							<p>Camera Speed: <span id="exposure"></span></p>
+							<input type="range" min="-50" max="50" value="0" class="slider" id="exposureRange">
+							<p>Exposure: <span id="exposureValue">50</span></p>
 						</div>
 
 						<div class="slidecontainer">
-							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-							<p>Brightness</p>
+							<input type="range" min="-50" max="50" value="0" class="slider" id="brightnessRange">
+							<p>Brightness: <span id="brightnessValue">50</span></p>
 						</div>
 
 						<div class="slidecontainer">
-							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-							<p>Contrast</p>
+							<input type="range" min="-50" max="50" value="0" class="slider" id="contrastRange">
+							<p>Contrast: <span id="contrastValue">50</span></p>
 						</div>
 
 						<div class="slidecontainer">
-							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-							<p>Saturation</p>
+							<input type="range" min="-50" max="50" value="0" class="slider" id="saturationRange">
+							<p>Saturation: <span id="saturationValue">50</span></p>
 								<div class="col-12">
 									<ul class="actions">
 										<li><input type="reset" value="Reset" /></li>
-										<li><input type="submit" value="Save" class="primary" /></li>
+										<li><input type="submit" value="Set Up Camera" class="primary" /></li>
 								</ul>
 						</div>
 					</div>
@@ -109,13 +109,17 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				const slider = document.getElementById("myRange");
-				const output = document.getElementById("exposure");
-				output.textContent = slider.value;
+				const sliders = document.querySelectorAll(".slider");
 
-				slider.oninput = function() {
-				output.textContent = this.value;
-				};
-				</script>
+				sliders.forEach(slider => {
+					const valueSpan = slider.nextElementSibling.querySelector("span");
+					valueSpan.textContent = slider.value;
+
+					slider.oninput = function () {
+						valueSpan.textContent = this.value;
+					};
+				});
+			</script>
+
 	</body>
 </html>
